@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ZeitPlan.Views.Teacher.Teacher_Profile"
+             Title="Teacher Profile " >
+    <ContentPage.Content>
+        <StackLayout>
+            <ActivityIndicator x:Name="LoadingInd" IsRunning="False" />
+
+            <Image x:Name="TImage" HeightRequest="200" WidthRequest="1000"/>
+
+
+
+            <ScrollView Orientation="Horizontal">
+                <!--overall Grid stacklayout-->
+                <StackLayout Padding="0" >
+
+                    <Grid>
+                        <!--overall fram stacklayout-->
+                        <StackLayout Margin="20,20,15,50">
+                            <!--whole bigger frame-->
+                            <Frame BackgroundColor="#bd6513" CornerRadius="30" HasShadow="True" HeightRequest="1200" HorizontalOptions="FillAndExpand">
+
+
+                                <!--for overall child frame in parent frame stacklayout-->
+                                <StackLayout>
+                                    <!--for Text Profile-->
+                                    <StackLayout HorizontalOptions="CenterAndExpand">
+                                        <Label Text="Profile" TextColor="white" FontSize="Large" FontAttributes="Bold" HorizontalTextAlignment="Center">
+                                        </Label>
+                                    </StackLayout>
+                                    <!--for name-->
+                                    <StackLayout Margin="0,25,0,0">
+ 
+                                        <Frame BackgroundColor="white" Padding="0" Margin="0" BorderColor="#bd6513" CornerRadius="50" HorizontalOptions="FillAndExpand">
+                                            <StackLayout Orientation="Horizontal">
+                                                <Frame BackgroundColor="white" CornerRadius="15" HeightRequest="30" WidthRequest="30" Padding="0" Margin="7" HorizontalOptions="Start">
+                                                    <Image Source="pro.png"  BackgroundColor="White" Aspect="AspectFill" Margin="0" />
+                                                </Frame>
+                                                <Label TextColor="#bd6513" Padding="8" FontSize="20"  Text="{Binding TEACHER_NAME}" x:Name="txtName"/>
+                                            </StackLayout>
+                                        </Frame>
+                                        
+                                        <!--for class pick-->
+                                        <Frame BackgroundColor="white" Padding="0" Margin="0" BorderColor="#bd6513" CornerRadius="50" HorizontalOptions="FillAndExpand">
+                                            <StackLayout Orientation="Horizontal">
+                                                <Frame BackgroundColor="white" CornerRadius="15" HeightRequest="30" WidthRequest="30" Padding="0" Margin="7" HorizontalOptions="Start">
+                                                    <Image Source="ic_class.png"  BackgroundColor="White" Aspect="AspectFill" Margin="0" />
+                                                </Frame>
+                                                <Label  TextColor="#bd6513" Padding="8" FontSize="20" Text="{Binding DEPARTMENT_NAME}" x:Name="txtDeptName"/>
+                                            </StackLayout>
+                                        </Frame>
+
+                                        <!--for email-->
+
+                                        <Frame BackgroundColor="white" Padding="0" Margin="0" BorderColor="#bd6513" CornerRadius="50" HorizontalOptions="FillAndExpand">
+                                            <StackLayout Orientation="Horizontal">
+                                                <Frame BackgroundColor="white" CornerRadius="15" HeightRequest="30" WidthRequest="30" Padding="0" Margin="7" HorizontalOptions="Start">
+                                                    <Image Source="em.png"  BackgroundColor="White" Aspect="AspectFill" Margin="0" />
+                                                </Frame>
+                                                <Label  TextColor="#bd6513" Padding="8" FontSize="20" Text="{Binding TEACHER_EMAIL}"   x:Name="txtEmail"/>
+
+                                            </StackLayout>
+                                        </Frame>
+
+                                        <!--for Password-->
+                                        <Frame BackgroundColor="white" Padding="0" Margin="0" BorderColor="#bd6513" CornerRadius="50" HorizontalOptions="FillAndExpand">
+                                            <StackLayout Orientation="Horizontal">
+                                                <Frame BackgroundColor="white" CornerRadius="15" HeightRequest="30" WidthRequest="30" Padding="0" Margin="7" HorizontalOptions="Start">
+                                                    <Image Source="pass.png"  BackgroundColor="White" Aspect="AspectFill" Margin="0" />
+                                                </Frame>
+                                                <Label   TextColor="#bd6513" Padding="8" FontSize="20" Text="{Binding TEACHER_PASSWORD}" x:Name="txtPassword"/>
+                                           
+
+                                            </StackLayout>
+                                        </Frame>
+
+                                        <!--//FOR pHONO-->
+
+                                        <Frame BackgroundColor="white" Padding="0" Margin="0" BorderColor="#bd6513" CornerRadius="50" HorizontalOptions="FillAndExpand">
+                                            <StackLayout Orientation="Horizontal">
+                                                <Frame BackgroundColor="white" CornerRadius="15" HeightRequest="30" WidthRequest="30" Padding="0" Margin="7" HorizontalOptions="Start">
+                                                    <Image Source="ph.png"  BackgroundColor="White" Aspect="AspectFill" Margin="0" />
+                                                </Frame>
+                                                <Label   TextColor="#bd6513" Padding="8" FontSize="20" Text="{Binding TEACHER_PHNO}" x:Name="txtPhone"/>
+                                             
+
+                                            </StackLayout>
+                                        </Frame>
+                                        <!--for Address-->
+
+                                        <Frame BackgroundColor="white" Padding="0" Margin="0" BorderColor="#bd6513" CornerRadius="50" HorizontalOptions="FillAndExpand">
+                                            <StackLayout Orientation="Horizontal">
+                                                <Frame BackgroundColor="white" CornerRadius="15" HeightRequest="30" WidthRequest="30" Padding="0" Margin="7" HorizontalOptions="Start">
+                                                    <Image Source="Lo.png"  BackgroundColor="White" Aspect="AspectFill" Margin="0" />
+                                                </Frame>
+                                                <Label   TextColor="#bd6513" Padding="8" FontSize="20" Text="{Binding TEACHER_ADDRESS}" x:Name="txtAddress"/>
+                                           
+
+                                            </StackLayout>
+                                        </Frame>
+
+                                        <Frame BackgroundColor="white" Padding="0" Margin="0" BorderColor="#bd6513" CornerRadius="50" HorizontalOptions="FillAndExpand">
+                                            <StackLayout Orientation="Horizontal">
+                                                <Frame BackgroundColor="white" CornerRadius="15" HeightRequest="30" WidthRequest="30" Padding="0" Margin="7" HorizontalOptions="Start">
+                                                    <Image Source="ic_prog.png"  BackgroundColor="White" Aspect="AspectFill" Margin="0" />
+                                                </Frame>
+                                                <Label   TextColor="#bd6513" Padding="8" FontSize="20" Text="{Binding Status}" x:Name="txtStatus"/>
+                                             
+
+                                            </StackLayout>
+                                        </Frame>
+
+
+
+
+
+
+
+                                    </StackLayout>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+
+
+
+
+                      
+                    </Grid>
+                </StackLayout>
+
+            </ScrollView>
+           
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
